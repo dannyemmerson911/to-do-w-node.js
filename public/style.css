@@ -1,0 +1,154 @@
+head, body {
+	display: flex;
+	background: linear-gradient(to right, #f857a6, #ff5858);
+	height: auto;
+	width: auto;
+	justify-content: center;
+	font-family: 'Open Sans', sans-serif;
+	padding-top: 50px;
+}
+
+h1, h3 {
+	margin-left: 4.5%;
+	position: static;
+	margin-bottom: 1px;
+	margin-top: 1px;
+	font-weight: 300;
+}
+
+h1 {
+	margin-top: 25px;
+}
+
+.welcomeForm h1, p {
+	margin-left: .5%;
+}
+
+input {
+	height:45px;
+	width: 97%;
+	border-radius: 5px;
+	font-size: 15px;
+	color: black;
+	padding-left: 5px;
+	margin-right: 5px;
+}
+
+button {
+	margin-top: 50px;
+	margin-bottom: 25px;
+	background-color: #ff0000;
+	opacity: 0.4;
+	height: 50px;
+	color: #eee;
+	font-size: 15px;
+	letter-spacing: 1px;
+	border-radius: 5px;
+}
+
+button:hover{
+	opacity: 1;
+	cursor: pointer;
+	transition: 2000ms;
+	background-color: #ff69b4
+}
+
+.mainWrapper{
+	height: 100%;
+	width: 375px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: white;
+	margin: 0 auto;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+	border-radius: 5px;
+	margin-top: 40px;
+}
+
+.welcomeForm {
+	background-color: white;
+	height: 65%;
+	width: 555px;
+	padding: 10px;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+	border-radius: 5px;
+	margin: 0 auto;
+	margin-top: 100px;
+	padding-bottom: 3px;
+}
+
+#enter {
+	float: right;
+	color: #ff69b4;
+	text-decoration: none;
+}
+
+#enterArrow {
+	width: 20px;
+	color: #ff69b4;
+}
+
+#exitArrow{
+	float: left;
+	margin-left: 5px;
+	margin-right: 3px;
+	margin-bottom: 0px;
+	width: 20px;
+	color: #ff69b4;
+}
+
+#return{
+	text-decoration: none;
+	margin-top: 8px;
+	color: #ff69b4;
+}
+ol {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	list-style: none;
+	counter-reset: li;
+	padding-right: 30px;
+	padding-left: 0px;
+}
+
+li {
+	margin-left: 30px;
+	margin-top: 20px;
+	padding: 10px;
+	counter-increment: li;
+}
+
+li::before{
+	content: counter(li) '.';
+	text-align: right;
+}
+
+i{ 
+	float: right;
+	margin-right: 5px;
+	transition: 2000ms;
+}
+
+i:hover {
+	cursor: pointer;
+}
+
+#taskInput {
+	margin-top: 25px;
+}
+
+#searchBar {
+	width: 87%;
+	margin: auto;
+	margin-top: 25px;
+	margin-left: 20px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	width: 90%;
+	margin: auto;
+}
