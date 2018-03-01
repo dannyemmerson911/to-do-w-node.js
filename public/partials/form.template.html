@@ -4,9 +4,9 @@
 		<h3>The neat app that keeps track</h3>
 		<input id = "searchBar" type="text" ng-model="searchBar" placeholder="Filter your to-dos">
 		<ol>
-			<li ng-repeat="task in $ctrl.list | toArray: false | filter:searchBar" hover-state> 
-			{{task}}
-			<span><i class="material-icons" ng-click="$ctrl.remove($index)">close</i></span>
+			<li ng-repeat="task in $ctrl.list | filter:searchBar" hover-state> 
+			{{task.task}}
+			<span><i class="material-icons" ng-click="$ctrl.remove(task)">close</i></span>
 			</li>
 		</ol>
 		<form>

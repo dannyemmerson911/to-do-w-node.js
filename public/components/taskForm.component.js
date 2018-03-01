@@ -5,17 +5,27 @@
 
 		controller: function(listService){
 			var $ctrl = this;
-			$ctrl.list = listService.getTasks();
+			loadPage(); 
+			
 			$ctrl.remove = function(task){
-				listService.removeTask(task)
+				listService.removeTask(task.id).then(loadPage)
+				
 			};
-			$ctrl.set = function(task){
+			$ctrl.set = function(newTask){
 				$ctrl.task = "";
-				listService.addTask(task);
+				listService.addTask(newTask).then(loadPage)
 			};
 			
+			
+			function loadPage(){
+				listService.getTasks().then(function(tasks){
+				$ctrl.list = tasks;
+				});
+			}
 		}
-	};
+	}
+
+	
 
 	
 	angular

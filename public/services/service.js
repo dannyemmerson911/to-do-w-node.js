@@ -1,6 +1,4 @@
 (function(){
-	var savedTaskArr = [];
-
 	function listService($http){
 
 		return {
@@ -9,7 +7,7 @@
 			removeTask: removeTask
 		}
 
-		function removeTask(task){
+		function removeTask(taskId){
 			return $http({
 				method: "DELETE",
 				url: "/tasks/" + taskId
