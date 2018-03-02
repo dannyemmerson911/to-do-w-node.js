@@ -24,11 +24,18 @@ router.post("/tasks", function(req, res){
 	})	
 })
 
-router.put("/tasks", function(reg, res){
-	var task = req.body;
-	var id = req.params.id; 
-	taskDb.update(task, id); 
-	res.status(201).send(task);
+router.put("/tasks/:id", function(reg, res){
+	var toDo = req.body;
+	var id = req.params.id;
+	var sql = "UPDATE tasks SET task=$2::text WHERE id=$1::int"; 
+	var values = [id, toDo.task]; 
+	pool.query(sql, values).then(function(result){
+		res.status(201).send("UPDATED");
+	}).catch(function(err){
+		console.log(err);
+		res.status(500).send("ERROR"); 
+	})
+
 })
 
 router.delete("/tasks/:id", function(req, res){
@@ -41,6 +48,7 @@ router.delete("/tasks/:id", function(req, res){
 		res.status(500).send("ERROR"); 
 	})
 });	
+
 
 
 module.exports = router; 

@@ -32,6 +32,15 @@
 				return response.data; 
 			});
 		};
+
+		function editTask(){
+			return $http({
+				method: "PUT", 
+				url: "/tasks/" + taskId
+			}).then(function(response){
+				return response.data; 
+			})
+		}
 	};
 
 angular
